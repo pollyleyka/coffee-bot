@@ -1,10 +1,9 @@
+# fly.toml file generated for coffee-bot-app on 2022-11-25T16:46:52+04:00
+
 app = "coffee-bot-app"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  builder = "heroku/buildpacks:20"
 
 [env]
   PORT = "8080"
