@@ -1,0 +1,21 @@
+app = "coffee-bot-app"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[env]
+  PORT = "8080"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  processes = ["app"]
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
